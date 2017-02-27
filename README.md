@@ -1,10 +1,9 @@
-# Node.js OpenWhisk Webui - Query Console
+# Node.js OpenWhisk REST API 
 
-The Webui demonstrates a simple, reusable Node.js web application based on the Express framework that interacts with OpenWhisk APIs and provides an interface to list and Invoke actions,Packages and API gateway routes. The app extensively uses JavaScript client library(npm package) for the OpenWhisk platform.
+The API demonstrates a simple, reusable Node.js web application based on the Express framework that interacts with OpenWhisk APIs and provides an API to list and Invoke actions,Packages and API gateway routes. The app extensively uses JavaScript client library(npm package) for the OpenWhisk platform.
 
 OpenWhisk is a serverless platform that lets developers quickly and easily build feature-rich apps that automatically trigger responses to events.
 
-![OpenWhisk NodeJS query console](https://raw.githubusercontent.com/VidyasagarMSC/openwhisk-nodejs-webui/master/public/images/Openwhisk-nodejs.gif)
 
 ## Prerequisites
 1. Bluemix account.
@@ -56,25 +55,12 @@ cf push
 ```
 - Based on the artifacts in your manifest.yml file, NodeJS runtime is created and you can see your app running on the host your provided.
 
-## Test your app Web UI
-
-- http://localhost:6007/invoke/MyWatsonSequence?message=Interconnect (Try with different message values and use %20 if there is a space in your message like hello%20world)
--   http://localhost:6007/list/actions
-- 	http://localhost:6007/list/routes
-- 	http://localhost:6007/list/packages
-
-Replace localhost:6007 with your Bluemix Hostname to test this on your public url.
 
 ## Test REST API
 -  GET /api/v1/invoke/action/{actionName} followed by simple query
 -  POST /api/v1/invoke/action/{actionName} with a POST body eg., {"message":"test"}
 -  POST /api/v1/invoke/trigger/{triggerName} with a POST body (if any)
 -  GET /api/v1/list/{entity} entity = actions or packages or triggers or namespaces or activations or rules or routes
-
-## Coming Soon
-
-- Creating a sequence.
-- Watson Service Chaining.
 
 
 [Install Node.js]: https://nodejs.org/en/download/
